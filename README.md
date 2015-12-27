@@ -35,7 +35,7 @@ To properly install the plugin, you must add the style.css file and plugin.js fi
 ### Copy Code on Slides
 The editor allows you to copy any code you have on the current active slide into the active editor by pressing the Copy button.
 
-To ensure that you properly copy your code, make sure your code is enclosed in a <code></code> tag.
+To ensure that you properly copy your code, make sure your code is enclosed in a code tag like this:
 
 ```html
 <pre><code class="hljs" data-trim contenteditable>
@@ -59,7 +59,7 @@ By default Javascript, HTML, and CSS editors are enabled, but you can disable th
     });
 ```
 
-If you want to make changes simple overwrite the default option like so:
+If you want to make changes simply overwrite the default options like so:
 ```javascript
     RevealEditor({
         aceTheme: "ace/theme/xcode",
