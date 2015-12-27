@@ -32,6 +32,21 @@ To properly install the plugin, you must add the style.css file and plugin.js fi
 </script>
 ```
 
+### Copy Code on Slides
+The editor allows you to copy any code you have on the current active slide into the active editor by pressing the Copy button.
+
+To ensure that you properly copy your code, make sure your code is enclosed in a <code></code> tag.
+
+```html
+<pre><code class="hljs" data-trim contenteditable>
+function multiply(a, b) {
+    return a * b;
+}
+
+console.log(multiply(4, 5));
+</code></pre>
+```
+
 ## Options
 By default Javascript, HTML, and CSS editors are enabled, but you can disable the ones you do not need. You also have access to change the theme of the Ace editor
 
