@@ -7,7 +7,8 @@
             aceTheme: "ace/theme/twilight",
             javascript: true,
             html: true,
-            css: true
+            css: true,
+            fontSize: 18
         }, options);
         
         // Binds Console Output to Editor
@@ -129,12 +130,12 @@
             });
             
             $(".run").click(function () {
+                
                 if ($("#jsEditor").hasClass("active")) {
                     var s = parseJavascript();
                     $("body").append("<script class='script'>" + s + "</script>");
                     $(".script").remove();
-                    var size = $(".editor .output .wrapper .js p").css("font-size");
-                    $(".editor .output .wrapper .js p").css("font-size", size);
+                    $(".editor .output .wrapper .js p").css("font-size", settings.fontSize);
                 } else if ($("#cssEditor").hasClass("active") || $("#htmlEditor").hasClass("active")) {
                     var css = parseCSS(),
                         html = parseHtml();
@@ -182,17 +183,15 @@
             });
             
             $(".lg").on("click", function () {
-                var i = parseInt($(".editor .ace").css("font-size"), 10),
-                    j = parseInt($(".editor .output .wrapper .js p").css("font-size"), 10);
-                $(".editor .ace").css("font-size", i + 1);
-                $(".editor p").css("font-size", j + 1);
+                settings.fontSize += 1;
+                $(".editor .ace").css("font-size", settings.fontSize);
+                $(".editor .output .wrapper .js p").css("font-size", settings.fontSize);
             });
             
             $(".sm").on("click", function () {
-                var i = parseInt($(".editor .ace").css("font-size"), 10),
-                    j = parseInt($(".editor .output .wrapper .js p").css("font-size"), 10);
-                $(".editor .ace").css("font-size", i - 1);
-                $(".editor .output .wrapper .js p").css("font-size", j - 1);
+                settings.fontSize -= 1;
+                $(".editor .ace").css("font-size", settings.fontSize);
+                $(".editor .output .wrapper .js p").css("font-size", settings.fontSize);
             });
             
             $(".copy").on("click", function () {
