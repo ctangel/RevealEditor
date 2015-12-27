@@ -55,7 +55,8 @@ By default Javascript, HTML, and CSS editors are enabled, but you can disable th
         aceTheme: "ace/theme/twilight",
         javascript: true,
         html: true,
-        css: true
+        css: true,
+        fontSize: 18
     });
 ```
 
@@ -65,6 +66,7 @@ If you want to make changes simply overwrite the default options like so:
         aceTheme: "ace/theme/xcode",
         javascript: true,
         html: false,
-        css: false
+        css: false,
+        fontSize: 24
     });
 ```
