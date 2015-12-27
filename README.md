@@ -20,7 +20,7 @@ To properly install the plugin, you must add the style.css file and plugin.js fi
 <head>
     <link rel="stylesheet" href="style.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="plugin.js"></script>
+    <script src="revealeditor.js"></script>
 </head>
 <body>
     <button class="btn"> Open </button>
