@@ -1,3 +1,5 @@
+# Reveal Editor
+
 An editor for coding demonstrations designed for the HTML presentation platform [reveals.js](https://github.com/hakimel/reveal.js/). 
 
 The editor will allow for Javascript, HTML, and CSS coding without ever exisitng fullscreen presentation. 
