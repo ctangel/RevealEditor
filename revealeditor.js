@@ -133,6 +133,8 @@
                     var s = parseJavascript();
                     $("body").append("<script class='script'>" + s + "</script>");
                     $(".script").remove();
+                    var size = $(".editor .output .wrapper .js p").css("font-size");
+                    $(".editor .output .wrapper .js p").css("font-size", size);
                 } else if ($("#cssEditor").hasClass("active") || $("#htmlEditor").hasClass("active")) {
                     var css = parseCSS(),
                         html = parseHtml();
@@ -183,7 +185,7 @@
                 var i = parseInt($(".editor .ace").css("font-size"), 10),
                     j = parseInt($(".editor .output .wrapper .js p").css("font-size"), 10);
                 $(".editor .ace").css("font-size", i + 1);
-                $(".editor .output .wrapper .js p").css("font-size", j + 1);
+                $(".editor p").css("font-size", j + 1);
             });
             
             $(".sm").on("click", function () {
