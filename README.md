@@ -25,7 +25,7 @@ To properly install the plugin, you must add the style.css file and plugin.js fi
     <script src="revealeditor.js"></script>
 </head>
 <body>
-    <button class="btn"> Open </button>
+    <a class="btn"> Open </a>
 </body>
 <script>
     $(".btn").RevealEditor();

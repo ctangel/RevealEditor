@@ -85,3 +85,11 @@
 .editor pre:not(.active) {
     display: none;
 }
+
+.editor .iframe {
+    border: none;
+}
+
+.btn {
+    cursor: pointer;
+}
