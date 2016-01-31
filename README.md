@@ -6,6 +6,8 @@ The editor will allow for Javascript, HTML, and CSS coding without ever exiting 
 
 The editor was designed to be used with reveal.js, it does not need reveal.js to function.
 
+Checkout the [demo](http://ctangel.github.io/RevealEditor/index.html)!
+
 ## Dependencies
 It does depend on jQuery and [Ace Editor](https://github.com/ajaxorg/ace-builds/). Ace requires the entire contents of the src-noconflict folder.
 
