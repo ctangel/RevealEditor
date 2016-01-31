@@ -2,7 +2,7 @@
 
 An editor for coding demonstrations designed for the HTML presentation platform [reveals.js](https://github.com/hakimel/reveal.js/). 
 
-The editor will allow for Javascript, HTML, and CSS coding without ever exisitng fullscreen presentation. 
+The editor will allow for Javascript, HTML, and CSS coding without ever exiting the fullscreen presentation. 
 
 The editor was designed to be used with reveal.js, it does not need reveal.js to function.
 
@@ -38,7 +38,7 @@ The editor allows you to copy any code you have on the current active slide into
 To ensure that you properly copy your code, make sure your code is enclosed in a code tag like this:
 
 ```html
-<pre><code class="hljs" data-trim contenteditable>
+<pre><code class="hljs js" data-trim contenteditable>
 function multiply(a, b) {
     return a * b;
 }
@@ -46,6 +46,8 @@ function multiply(a, b) {
 console.log(multiply(4, 5));
 </code></pre>
 ```
+
+Be sure to use the class 'js', 'html', or 'css' depending on the type of code contained in the pre-code block.
 
 ## Options
 By default Javascript, HTML, and CSS editors are enabled, but you can disable the ones you do not need. You also have access to change the theme of the Ace editor
