@@ -134,7 +134,7 @@
                 });
             });
 
-            $(".html").on("click", function () {
+            $("a.html").on("click", function () {
                 $(".active").toggleClass("active");
                 $("#htmlEditor").toggleClass("active");
 
@@ -143,7 +143,7 @@
                 $(".html").toggleClass("active");
             });
 
-            $(".js").on("click", function () {
+            $("a.js").on("click", function () {
                 $(".active").toggleClass("active");
                 $("#jsEditor").toggleClass("active");
                 $(".output .wrapper.html.css").hide();
@@ -151,7 +151,7 @@
                 $(".js").toggleClass("active");
             });
 
-            $(".css").on("click", function () {
+            $("a.css").on("click", function () {
                 $(".active").toggleClass("active");
                 $("#cssEditor").toggleClass("active");
                 $(".output .wrapper.js").hide();
