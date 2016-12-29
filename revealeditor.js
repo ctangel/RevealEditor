@@ -1,7 +1,7 @@
 (function ($) {
     'use strict';
     $.fn.RevealEditor = function (options) {
-        
+
         // Default setting;
         var settings = $.extend({
             aceTheme: "ace/theme/twilight",
@@ -10,7 +10,7 @@
             css: true,
             fontSize: 18
         }, options);
-        
+
         //Parses Javascript Code
         function parseJavascript() {
             var s = "";
@@ -19,7 +19,7 @@
             });
             return s;
         }
-        
+
         //Parses HTML Code
         function parseHtml() {
             var s = "";
@@ -28,7 +28,7 @@
             });
             return s;
         }
-        
+
         //Parses CSS Code
         function parseCSS() {
             var s = "",
@@ -39,7 +39,7 @@
             });
             return s;
         }
-        
+
         // Sets Up Editor
         function setUpEditor(este) {
             este.after("<div class='editor'><div class='panel input'><div class='controls'><a class='close'>X</a></div><div class='wrapper'></div></div><div class='panel output'><div class='controls''><a class='run'> Run </a><a class='clear'> Clear </a><a class='copy'>Copy</a><a class='lg'> + </a><a class='sm'> -</a></div><div class='console wrapper js active'></div><iframe sandbox='allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation' class='iframe wrapper html css' srcdoc=''></iframe></div></div></div>");
@@ -70,9 +70,9 @@
                     $(".output .wrapper.html.css").addClass("active");
                 }
             }
-            
+
         }
-        
+
         // Sets Up Ace Javascript Editor
         function setUpAceJSEditor() {
             if (settings.javascript) {
@@ -81,7 +81,7 @@
                 jseditor.session.setMode("ace/mode/javascript");
             }
         }
-        
+
         // Sets Up Ace HTML Editor
         function setUpAceHtmlEditor() {
             if (settings.html) {
@@ -90,7 +90,7 @@
                 htmleditor.session.setMode("ace/mode/html");
             }
         }
-        
+
         // Sets Up Ace CSS Editor
         function setUpAceCssEditor() {
             if (settings.css) {
@@ -99,14 +99,16 @@
                 htmleditor.session.setMode("ace/mode/css");
             }
         }
-        
+
         // Sets Up Editor controls
         function setUpControls(este) {
             este.on("click", function () {
                 $(".editor").toggle();
-                Reveal.configure({keyboard: false});
+                Reveal.configure({
+                    keyboard: false
+                });
             });
-            
+
             $(".run").click(function () {
                 var js = parseJavascript(),
                     css = parseCSS(),
@@ -124,49 +126,51 @@
                     $(".iframe").attr("srcdoc", "");
                 }
             });
-            
+
             $(".close").on("click", function () {
                 $(".editor").hide();
-                Reveal.configure({keyboard: true});
+                Reveal.configure({
+                    keyboard: true
+                });
             });
-            
-            $(".html").on("click", function () {
+
+            $("a.html").on("click", function () {
                 $(".active").toggleClass("active");
                 $("#htmlEditor").toggleClass("active");
-                
+
                 $(".output .wrapper.js").hide();
                 $(".output .wrapper.html.css").show();
                 $(".html").toggleClass("active");
             });
-            
-            $(".js").on("click", function () {
+
+            $("a.js").on("click", function () {
                 $(".active").toggleClass("active");
                 $("#jsEditor").toggleClass("active");
                 $(".output .wrapper.html.css").hide();
                 $(".output .wrapper.js").show();
                 $(".js").toggleClass("active");
             });
-            
-            $(".css").on("click", function () {
+
+            $("a.css").on("click", function () {
                 $(".active").toggleClass("active");
                 $("#cssEditor").toggleClass("active");
                 $(".output .wrapper.js").hide();
                 $(".output .wrapper.html.css").show();
                 $(".css").toggleClass("active");
             });
-            
+
             $(".lg").on("click", function () {
                 settings.fontSize += 1;
                 $(".editor .ace").css("font-size", settings.fontSize);
                 $(".editor .output .wrapper.js p").css("font-size", settings.fontSize);
             });
-            
+
             $(".sm").on("click", function () {
                 settings.fontSize -= 1;
                 $(".editor .ace").css("font-size", settings.fontSize);
                 $(".editor .output .wrapper.js p").css("font-size", settings.fontSize);
             });
-            
+
             $(".copy").on("click", function () {
                 var $section = $("section.present:not(.stack)"),
                     s = $section.find("code").text(),
@@ -206,7 +210,7 @@
                 $(".copy").hide();
             }
         }
-        
+
         // Initializes Editor
         function init(este) {
             setUpEditor(este);
@@ -215,13 +219,13 @@
             setUpAceCssEditor();
             setUpControls(este);
             enableCopyBtnLogic();
-            
+
             // Sets up Reveal Slide eventhandlers
             Reveal.addEventListener("slidechanged", function (event) {
                 enableCopyBtnLogic();
             });
         }
-        
+
         init(this);
     };
 }(jQuery));
