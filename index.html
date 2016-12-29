@@ -14,11 +14,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <!-- Required CSS files -->
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css1/reveal.css">
+    <link rel="stylesheet" href="css1/theme/black.css" id="theme">
 
     <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib1/css/zenburn.css">
 
 
     <!-- User CSS files -->
@@ -33,7 +33,7 @@
         var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css1/print/pdf.css' : 'css1/print/paper.css';
         document.getElementsByTagName('head')[0].appendChild(link);
     </script>
     <style>
@@ -121,7 +121,7 @@ body {
     </div>
 
     <!-- Required Scripts -->
-    <script src="lib/js/head.min.js"></script>
+    <script src="lib1/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
     <script src="src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 
@@ -133,45 +133,35 @@ body {
             progress: true,
             history: true,
             center: true,
-
-            transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-            // Optional reveal.js plugins
-            dependencies: [
-                {
-                    src: 'lib/js/classList.js',
-                    condition: function () {
-                        return !document.body.classList;
-                    }
-                },
-                {
-                    src: 'plugin/markdown/marked.js',
-                    condition: function () {
-                        return !!document.querySelector('[data-markdown]');
-                    }
-                },
-                {
-                    src: 'plugin/markdown/markdown.js',
-                    condition: function () {
-                        return !!document.querySelector('[data-markdown]');
-                    }
-                },
-                {
-                    src: 'plugin/highlight/highlight.js',
-                    async: true,
-                    callback: function () {
-                        hljs.initHighlightingOnLoad();
-                    }
-                },
-                {
-                    src: 'plugin/zoom-js/zoom.js',
-                    async: true
-                },
-                {
-                    src: 'plugin/notes/notes.js',
-                    async: true
+            transition: 'slide', //  none/fade/slide/convex/concave/zoom       Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib1/js/classList.js',
+                condition: function () {
+                    return !document.body.classList;
                 }
-                ]
+            }, {
+                src: 'plugin1/markdown/marked.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin1/markdown/markdown.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin1/highlight/highlight.js',
+                async: true,
+                callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin1/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin1/notes/notes.js',
+                async: true
+            }]
         });
         $(".btn").RevealEditor();
     </script>
